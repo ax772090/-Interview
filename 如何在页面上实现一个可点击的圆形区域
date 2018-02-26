@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>如何在页面上实现一个可点击的圆形区域</title>
+</head>
+<body>
+<!--方法一:map+area或者svg-->
+<img src="../CSS&HTML/img/HBuilder.png" usemap="#Map">
+<map name="Map">
+    <area shape="circle" coords="50,50,50" href="https://www.baidu.com" target="_blank">
+</map>
+
+<!--方法二:border-radius-->
+<style>
+    .disc{
+        width: 100px;
+        height: 100px;
+        background-color: dimgray;
+        border-radius: 50%;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+
+    }
+</style>
+<div class="disc">点击区域</div>
+
+
+<!--方法三:纯js实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等-->
+<script>
+    document.onclick=function (e) {
+        var r=50;
+        var x1=100; y1=100;
+        var x2=e.clientX;
+        var y2=e.clientY;
+        var len=Math.abs(Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2)));
+        if(len<50){
+            alert("在园内");
+        }else {
+            alert("在圆外");
+        }
+    }
+</script>
+
+
+</body>
+</html>

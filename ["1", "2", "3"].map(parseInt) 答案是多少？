@@ -5,6 +5,7 @@
     <title>["1", "2", "3"].map(parseInt) 答案是多少？</title>
 </head>
 <body>
+    参考网址：http://blog.csdn.net/justjavac/article/details/19473199
     <!--首先理解parseInt(str,radix)-->
 <!--注意：其中 radix 表示要解析的数字的“基数”。【该值介于 2 ~ 36 之间，并且字符串中的数字不能大于radix才能正确返回数字结果值】;
     如果radix为0或者省略了，parseInt默认为十进制；如：parseInt("12",10) ;parseInt("12") ;parseInt("12",0) ;结果都是12
